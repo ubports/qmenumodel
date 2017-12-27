@@ -1,4 +1,4 @@
-qmenumodel (0.2.12+17.04.20170404-0ubuntu1) zesty; urgency=medium
+qmenumodel (0.2.13+ubports1) xenial; urgency=medium
 
   [ Albert Astals Cid ]
   * Add a return true
