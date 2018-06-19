@@ -13,13 +13,14 @@ include_directories(
     ${GLIB_INCLUDE_DIRS}
 )
 
+find_package(Qt5Qml REQUIRED)
+find_package(Qt5Quick REQUIRED)
 target_link_libraries(qmenumodel-qml
     qmenumodel
     ${GLIB_LDFLAGS}
     ${GIO_LDFLAGS}
+    Qt5::Qml Qt5::Quick
 )
-
-qt5_use_modules(qmenumodel-qml Qml Quick)
 
 execute_process(COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/qmldir"
                                                               "${CMAKE_CURRENT_BINARY_DIR}/qmldir")
