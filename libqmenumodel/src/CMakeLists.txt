@@ -45,12 +45,12 @@ include_directories(
     ${GIO_INCLUDE_DIRS}
 )
 
+find_package(Qt5Quick REQUIRED)
 target_link_libraries(${SHAREDLIBNAME}
     ${GLIB_LDFLAGS}
     ${GIO_LDFLAGS}
+    Qt5::Core Qt5::Qml Qt5::Quick
 )
-
-qt5_use_modules(${SHAREDLIBNAME} Core Qml Quick)
 
 install(TARGETS ${SHAREDLIBNAME} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
